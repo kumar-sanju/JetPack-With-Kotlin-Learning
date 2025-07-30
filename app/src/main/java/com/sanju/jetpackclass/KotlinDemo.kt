@@ -43,6 +43,43 @@ fun main(){
 
     val objec = Insurance("Ram", "Sita")
     val objecextended = extendFamilyInsurance("Ram", "Sita", "hffff", "hiii")
+
+    var map1 = mapOf<Int, String>(100 to "amar", 102 to "helo", 103 to "ooo")
+    var map2 = hashMapOf<Int, String>(100 to "amar", 102 to "helo", 103 to "ooo")
+    var map3 = mutableMapOf<Int, String>(100 to "amar", 102 to "helo", 103 to "ooo")
+    var map4 = HashMap<Int, String>()
+
+    for(element in map1){
+        println(element)
+    }
+    map2.put(104, "raggg")
+    println("${map2.values}")    //[101,102,103]
+    map4.put(100, "one")
+    println("${map4.keys}")      //[amar,helo,ooo]
+
+    var set1 = setOf<Int>(1,3,1,9)
+    var set2 = hashSetOf<Int>(1,3,1,9)
+    var set3 = mutableSetOf<Int>(1,3,1,9)
+
+    set2.add(7)
+    set2.remove(0)
+    set3.remove(0)
+    for (element in set1)
+        println(element)
+
+    //filter
+    var name = listOf<String>("hhh", "kkk", "lll")
+    var filteredList = name.filter { it.length < 5 }
+    println(filteredList)
+
+    val list = name.groupBy(keySelector = {it.first()}, valueTransform = {it.toUpperCase()})
+    println(list)
+    val list1 = name.groupByTo(LinkedHashMap(), keySelector = {it.first()}, valueTransform = {it.toUpperCase()})
+    list1['a']?.add("mmm")
+    println(list1)
+    val list2 = name.groupingBy { it.first() }.eachCount()
+    println(list2)
+
 }
 
 class extendFamilyInsurance(name: String, spouchName: String, father: String): Insurance(name, spouchName){
