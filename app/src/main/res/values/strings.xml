@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Jetpack Class</string>
+    <string name="title_activity_demo">DemoActivity</string>
+    <string name="title_activity_quote">QuoteActivity</string>
+</resources>
